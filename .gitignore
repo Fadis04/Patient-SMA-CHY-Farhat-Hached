@@ -20,3 +20,4 @@ Clair3/
 *.temp
 *.log
 logs/
+align/
