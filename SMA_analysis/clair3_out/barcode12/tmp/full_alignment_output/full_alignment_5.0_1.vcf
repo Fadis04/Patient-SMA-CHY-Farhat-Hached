@@ -1,0 +1,28 @@
+##fileformat=VCFv4.2
+##source=Clair3
+##clair3_version=1.2.0
+##cmdline=/home/wassef/Patients_Moez_Gribaa/Clair3/run_clair3.sh --bam_fn=/home/wassef/Patients_Moez_Gribaa/test/align/barcode12.SMN_ROI.RG.bam --ref_fn=/home/wassef/Patients_Moez_Gribaa/test/ref/GRCh38_chr5_masked_smn2.fa --threads=8 --platform=ont --model_path=/home/wassef/Patients_Moez_Gribaa/Clair3/models/ont --output=/home/wassef/Patients_Moez_Gribaa/test/clair3_out/barcode12 --sample_name=barcode12 --gvcf --print_ref_calls --snp_min_af=0.1 --indel_min_af=0.1
+##reference=/home/wassef/Patients_Moez_Gribaa/test/ref/GRCh38_chr5_masked_smn2.fa
+##FILTER=<ID=PASS,Description="All filters passed">
+##FILTER=<ID=LowQual,Description="Low quality variant">
+##FILTER=<ID=RefCall,Description="Reference call">
+##INFO=<ID=P,Number=0,Type=Flag,Description="Result from pileup calling">
+##INFO=<ID=F,Number=0,Type=Flag,Description="Result from full-alignment calling">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=GQ,Number=1,Type=Integer,Description="Genotype Quality">
+##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Approximate read depth (reads 1. with MQ below 5 or an user-specified threshold, or 2. selected by 'samtools view -F 2316', are filtered)">
+##FORMAT=<ID=AD,Number=R,Type=Integer,Description="Allelic depths for the ref and alt alleles in the order listed">
+##FORMAT=<ID=PL,Number=G,Type=Integer,Description="Normalized, Phred-scaled likelihoods for genotypes as defined in the VCF specification">
+##FORMAT=<ID=AF,Number=A,Type=Float,Description="Observed allele frequency in reads, for each ALT allele, in the same order as listed, or the REF allele for a RefCall">
+##contig=<ID=5,length=181538259>
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	barcode12
+5	70924872	.	C	.	14.37	RefCall	F	GT:GQ:DP:AD:AF:PL	0/0:14:1073:376:0.3504:990
+5	70925071	.	C	.	23.72	RefCall	F	GT:GQ:DP:AD:AF:PL	0/0:23:2443:1898:0.7769:990
+5	70942392	.	C	.	21.11	RefCall	F	GT:GQ:DP:AD:AF:PL	0/0:21:1001:376:0.3756:990
+5	70942496	.	C	.	27.42	RefCall	F	GT:GQ:DP:AD:AF:PL	0/0:27:1162:812:0.6988:990
+5	70942516	.	A	.	22.27	RefCall	F	GT:GQ:DP:AD:AF:PL	0/0:22:1231:943:0.7660:990
+5	70942565	.	A	.	21.66	RefCall	F	GT:GQ:DP:AD:AF:PL	0/0:21:1079:862:0.7989:990
+5	70942568	.	C	.	0.00	RefCall	F	GT:GQ:DP:AD:AF:PL	0/0:0:1060:740:0.6981:990
+5	70942911	.	C	.	25.32	RefCall	F	GT:GQ:DP:AD:AF:PL	0/0:25:465:227:0.4882:990
+5	70952169	.	C	.	20.18	RefCall	F	GT:GQ:DP:AD:AF:PL	0/0:20:1781:1404:0.7883:990
+5	70952201	.	G	.	26.15	RefCall	F	GT:GQ:DP:AD:AF:PL	0/0:26:1069:866:0.8101:990

@@ -1,0 +1,22 @@
+# Ignore large binary files
+*.fast5
+*.fastq
+*.bam
+*.bai
+*.cram
+*.fa
+*.fai
+*.mmi
+
+# Ignore raw data directories
+les_barcodes_par_nanopore/
+ref_gen/
+
+# Ignore Clair3 software (people can install it themselves)
+Clair3/
+
+# Ignore temporary files
+*.tmp
+*.temp
+*.log
+logs/

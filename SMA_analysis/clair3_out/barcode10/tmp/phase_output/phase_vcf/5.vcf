@@ -1,0 +1,18 @@
+##fileformat=VCFv4.2
+##source=Clair3
+##clair3_version=1.2.0
+##cmdline=/home/wassef/Patients_Moez_Gribaa/Clair3/run_clair3.sh --bam_fn=/home/wassef/Patients_Moez_Gribaa/test/align/barcode10.SMN_ROI.RG.bam --ref_fn=/home/wassef/Patients_Moez_Gribaa/test/ref/GRCh38_chr5_masked_smn2.fa --threads=8 --platform=ont --model_path=/home/wassef/Patients_Moez_Gribaa/Clair3/models/ont --output=/home/wassef/Patients_Moez_Gribaa/test/clair3_out/barcode10 --sample_name=barcode10 --gvcf --print_ref_calls --snp_min_af=0.1 --indel_min_af=0.1
+##reference=/home/wassef/Patients_Moez_Gribaa/test/ref/GRCh38_chr5_masked_smn2.fa
+##FILTER=<ID=PASS,Description="All filters passed">
+##FILTER=<ID=LowQual,Description="Low quality variant">
+##FILTER=<ID=RefCall,Description="Reference call">
+##INFO=<ID=P,Number=0,Type=Flag,Description="Result from pileup calling">
+##INFO=<ID=F,Number=0,Type=Flag,Description="Result from full-alignment calling">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=GQ,Number=1,Type=Integer,Description="Genotype Quality">
+##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Approximate read depth (reads 1. with MQ below 5 or an user-specified threshold, or 2. selected by 'samtools view -F 2316', are filtered)">
+##FORMAT=<ID=AD,Number=R,Type=Integer,Description="Allelic depths for the ref and alt alleles in the order listed">
+##FORMAT=<ID=PL,Number=G,Type=Integer,Description="Normalized, Phred-scaled likelihoods for genotypes as defined in the VCF specification">
+##FORMAT=<ID=AF,Number=A,Type=Float,Description="Observed allele frequency in reads, for each ALT allele, in the same order as listed, or the REF allele for a RefCall">
+##contig=<ID=5,length=181538259>
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	barcode10

@@ -1,0 +1,23 @@
+##fileformat=VCFv4.2
+##source=Clair3
+##clair3_version=1.2.0
+##cmdline=/home/wassef/Patients_Moez_Gribaa/Clair3/run_clair3.sh --bam_fn=/home/wassef/Patients_Moez_Gribaa/test/align/barcode11.SMN_ROI.RG.bam --ref_fn=/home/wassef/Patients_Moez_Gribaa/test/ref/GRCh38_chr5_masked_smn2.fa --threads=8 --platform=ont --model_path=/home/wassef/Patients_Moez_Gribaa/Clair3/models/ont --output=/home/wassef/Patients_Moez_Gribaa/test/clair3_out/barcode11 --sample_name=barcode11 --gvcf --print_ref_calls --snp_min_af=0.1 --indel_min_af=0.1
+##reference=/home/wassef/Patients_Moez_Gribaa/test/ref/GRCh38_chr5_masked_smn2.fa
+##FILTER=<ID=PASS,Description="All filters passed">
+##FILTER=<ID=LowQual,Description="Low quality variant">
+##FILTER=<ID=RefCall,Description="Reference call">
+##INFO=<ID=P,Number=0,Type=Flag,Description="Result from pileup calling">
+##INFO=<ID=F,Number=0,Type=Flag,Description="Result from full-alignment calling">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=GQ,Number=1,Type=Integer,Description="Genotype Quality">
+##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Approximate read depth (reads 1. with MQ below 5 or an user-specified threshold, or 2. selected by 'samtools view -F 2316', are filtered)">
+##FORMAT=<ID=AD,Number=R,Type=Integer,Description="Allelic depths for the ref and alt alleles in the order listed">
+##FORMAT=<ID=PL,Number=G,Type=Integer,Description="Normalized, Phred-scaled likelihoods for genotypes as defined in the VCF specification">
+##FORMAT=<ID=AF,Number=A,Type=Float,Description="Observed allele frequency in reads, for each ALT allele, in the same order as listed, or the REF allele for a RefCall">
+##contig=<ID=5,length=181538259>
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	barcode11
+5	70924543	.	A	G	1.73	LowQual	P	GT:GQ:DP:AD:AF	0/1:1:2:1,1:0.5000
+5	70924752	.	G	C	5.37	PASS	P	GT:GQ:DP:AD:AF	0/1:5:2:0,1:0.5000
+5	70924809	.	G	A	8.17	PASS	P	GT:GQ:DP:AD:AF	0/1:8:3:2,1:0.3333
+5	70924830	.	A	T	7.28	PASS	P	GT:GQ:DP:AD:AF	0/1:7:3:2,1:0.3333
+5	70942546	.	A	G	16.71	PASS	P	GT:GQ:DP:AD:AF	0/1:16:1993:1164,809:0.4059
