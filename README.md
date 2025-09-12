@@ -28,6 +28,7 @@ We employed Oxford Nanopore Technologies (ONT) targeted sequencing of the SMN1/S
 ---
 
 ## 📂 REPOSITORY STRUCTURE  
+```
 Patient-SMA-CHU-Farhat-Hached/
 ├── analysis_scripts/
 │ ├── smn_analysis_pipeline.sh # Main analysis pipeline
@@ -46,7 +47,7 @@ Patient-SMA-CHU-Farhat-Hached/
 ├── SMN1_exons.bed # SMN1 target regions
 ├── SMN2_exons.bed # SMN2 target regions
 └── GRCh38_chr5.fa # Reference genome
-
+```
 ---
 
 ## ⚙️ WORKFLOW  
