@@ -1,96 +1,110 @@
 SMN1/SMN2 Targeted Nanopore Sequencing Analysis Pipeline
-CHU Farhat Hached Sousse, Tunisia
+
+CHU Farhat Hached, Sousse – Tunisia
 Comprehensive Molecular Diagnosis of Spinal Muscular Atrophy Using Long-Read Sequencing
 
 📖 Project Overview
-This repository contains data and analysis pipelines for the molecular diagnosis of Spinal Muscular Atrophy (SMA) patients from CHU Farhat Hached Sousse, Tunisia. The study employs Oxford Nanopore Technologies (ONT) targeted sequencing of the SMN1/SMN2 locus combined with advanced bioinformatics analysis to detect pathogenic variants, copy number variations, and characterize SMN1-SMN2 hybridization patterns.
+
+This repository provides data and analysis pipelines for the molecular diagnosis of Spinal Muscular Atrophy (SMA) in patients from CHU Farhat Hached, Sousse, Tunisia.
+The project leverages Oxford Nanopore Technologies (ONT) targeted sequencing of the SMN1/SMN2 locus, combined with advanced bioinformatics workflows, to:
+
+Detect pathogenic variants
+
+Identify copy number variations (CNVs)
+
+Characterize SMN1–SMN2 hybridization patterns
 
 🧬 Key Findings
-8 SMA patients analyzed using targeted Nanopore sequencing
+
+8 SMA patients analyzed using targeted ONT sequencing
 
 Pathogenic deletions identified in the SMN1 gene
 
-Discriminatory variant analysis at position chr5:70,951,946 (SMN1 vs SMN2)
+Detection of the SMN1/SMN2 discriminatory variant at chr5:70,951,946
 
-Masked reference approach to improve variant calling accuracy
+Implementation of a masked reference strategy to improve variant calling accuracy
 
-Multiple pathogenic variants undetected by conventional methods
+Identification of pathogenic variants missed by conventional approaches
 
 🧪 Methods
-Targeted Sequencing Design
-Target Region: SMN1 gene (chr5:70,910,000-70,960,000)
+🔹 Targeted Sequencing Design
 
-Technology: Oxford Nanopore PromethION
+Target region: SMN1 gene (chr5:70,910,000–70,960,000)
 
-Barcodes: 8 patients (barcode08-barcode15)
+Platform: ONT PromethION
+
+Samples: 8 patients (barcode08–barcode15)
 
 Coverage: >100X per patient
 
-Bioinformatics Pipeline
-bash
-# Main analysis steps
-1. Reference preparation with SMN2 masking (chr5:70,048,000-70,078,000)
-2. Read alignment using minimap2
-3. Variant calling with Clair3
-4. Structural variant detection
-5. SMN1/SMN2 discrimination analysis
-6. Pathogenic variant validation
-Masked Reference Strategy
-To improve SMN1-specific variant detection, we created a masked reference genome where the SMN2 region (chr5:70,048,000-70,078,000) was replaced with N's, forcing reads to align to SMN1 and reducing mapping ambiguity.
+🔹 Bioinformatics Pipeline
+# Main analysis workflow
+1. Reference preparation with SMN2 masking (chr5:70,048,000–70,078,000)  
+2. Read alignment using minimap2  
+3. Variant calling with Clair3  
+4. Structural variant detection  
+5. SMN1/SMN2 discrimination analysis  
+6. Pathogenic variant validation  
+
+🔹 Masked Reference Strategy
+
+To enhance SMN1-specific detection, the SMN2 region was masked with N’s, forcing reads to align preferentially to SMN1 and reducing mapping ambiguity.
 
 🔬 Key Results
-1. SMN1/SMN2 Discriminatory Variant (chr5:70,951,946)
-Patient barcode08 results:
+1. SMN1/SMN2 Discriminatory Variant – c.840C>T
 
-text
 Position: chr5:70,951,946
-Total reads: 702
-C (SMN1-specific): 697 (99%) 
-T (SMN2-specific): 5 (1%)
-Deletions: 11
-This position represents the canonical SMN1 (C) vs SMN2 (T) discriminatory variant (c.840C>T). The 99% C support indicates successful SMN1-targeted sequencing with minimal SMN2 cross-amplification.
 
-2. Pathogenic Deletion Detection (chr5:70,942,825)
-Pathogenic Variant:
+Patient barcode08:
+
+Total reads: 702
+
+C (SMN1-specific): 697 (99%)
+
+T (SMN2-specific): 5 (1%)
+
+Deletions: 11
+
+✅ Confirms the canonical SMN1 (C) vs SMN2 (T) marker with strong enrichment for SMN1 reads.
+
+2. Pathogenic Deletion – c.584del (p.Pro195LeufsTer18)
 
 Position: chr5:70,942,825
 
 Variant: SMN1(NM_001297715.1):c.584del
 
-Consequence: p.(Pro195LeufsTer18)
+Consequence: Frameshift → Pathogenic (VarSome)
 
-Pathogenicity: Pathogenic (VarSome)
+Patient barcode08:
 
-Patient barcode08 quantification:
-
-text
 Total reads: 137
-C reference: 136 (99%)
-Deletion events: 91 (66%)
-This frameshift deletion was consistently detected across multiple patients but showed variable detection efficiency in automated variant callers, likely due to the homopolymer context (CCCCC).
 
-3. Additional Pathogenic Findings
-??
+C reference: 136 (99%)
+
+Deletion events: 91 (66%)
+
+⚠️ Automated callers showed variable detection due to the homopolymer context (CCCCC), highlighting the need for manual review.
+
+3. Additional Pathogenic Variants
+
+(Analysis in progress – results will be added soon)
 
 🧫 Comparative Analysis
 Variant Detection Challenges
-Our analysis revealed several limitations in current variant detection pipelines:
 
-Homopolymer Artifacts: Variants in repetitive regions (e.g., c.584del in CCCCC context) showed inconsistent detection
+Homopolymer artifacts: c.584del inconsistently detected in CCCCC repeats
 
-Structural Variants: Large deletions required manual IGV validation despite high coverage
+Structural variants: Larger deletions required IGV manual validation
 
-SMN1/SMN2 Discrimination: Reference bias affected variant calling in identical regions
+Reference bias: Impacted variant calling in identical SMN1/SMN2 regions
 
-Comparison with Existing Literature
-Our findings align with recent advancements in SMA molecular diagnostics:
+Literature Context
 
-"Long-read sequencing enables phased variant detection and improves SMA carrier screening" - Genome Medicine 2025
+“Long-read sequencing enables phased variant detection and improves SMA carrier screening” – Genome Medicine, 2025
 
-*"Comprehensive SMN1/SMN2 variant characterization requires multi-method approaches"* - Human Mutation 2023
+“Comprehensive SMN1/SMN2 variant characterization requires multi-method approaches” – Human Mutation, 2023
 
 📊 Repository Structure
-text
 Patient-SMA-CHY-Farhat-Hached/
 ├── analysis_scripts/
 │   ├── smn_analysis_pipeline.sh    # Main analysis pipeline
@@ -98,7 +112,7 @@ Patient-SMA-CHY-Farhat-Hached/
 ├── processed_data/
 │   ├── masked_reference/           # SMN2-masked reference
 │   ├── variant_calls/              # Clair3 VCF outputs
-│   └── coverage_analysis/          Depth statistics
+│   └── coverage_analysis/          # Depth statistics
 ├── raw_data/
 │   └── les_barcodes_par_nanopore/  # Barcoded patient data
 ├── results/
@@ -109,27 +123,24 @@ Patient-SMA-CHY-Farhat-Hached/
     ├── SMN1_exons.bed              # SMN1 target regions
     ├── SMN2_exons.bed              # SMN2 target regions
     └── GRCh38_chr5.fa              # Reference genome
+
 🚀 Usage
-Pipeline Execution
-bash
-# Run complete analysis
+Run Complete Analysis
 bash scripts/smn_analysis_pipeline.sh
 
-# Process individual patients
+Process Individual Patients
 python scripts/variant_calling.py --patient barcode08 --threads 16
+
 Data Access
-Compressed alignment files require extraction:
-
-bash
 tar -xzf SMA_analysis/align.tar.gz
+
 👥 Authors
-Fadi Slimi - Bioinformatician 
 
-📧 Contact
-For questions regarding this dataset or analysis pipeline:
+Fadi Slimi – Bioinformatician
 
-Email: fadi.slimi@insat.ucar.tn
+📧 Email: fadi.slimi@insat.ucar.tn
 
+🔗 LinkedIn: www.linkedin.com/in/fadi-slimi
 GitHub Issues: Project Issues
 
 All patient data is anonymized.
