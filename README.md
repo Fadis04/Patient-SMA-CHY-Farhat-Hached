@@ -52,7 +52,7 @@ Raw Data Preparation
 
 Target region: SMN1 gene (chr5:70,910,000–70,960,000)
 
-Platform: ONT PromethION
+Platform: ONT MinION MK1B
 
 Samples: 8 patients (barcode08–barcode15)
 
